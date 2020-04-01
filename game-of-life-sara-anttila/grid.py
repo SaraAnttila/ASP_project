@@ -99,4 +99,4 @@ def generate_seed(N, chosen_seed):
         cross_grid = Grid(X, N)
         return cross_grid
     else:
-        print('Sorry, unvalid entry')
+        print('Sorry, invalid entry')

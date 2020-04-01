@@ -8,7 +8,7 @@ class Cell():
         self.y = y
 
     def __str__(self):
-        return str(self.isAlive) + " (" + str(self.x) + ", " + str(self.y) + ")"
+        return  str(1) if self.isAlive else str(0)
 
     def __repr__(self):
         return self.__str__()

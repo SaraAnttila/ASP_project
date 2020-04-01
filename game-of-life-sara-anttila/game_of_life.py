@@ -12,12 +12,25 @@ class Game():
     def __init__(self, grid):
         self.grid = grid
         self.state = self.render_able()
-
+    """
+    Animation block
+    """
     def update(self, data):
         self.grid.update(N)
         self.state = self.render_able()
         mat.set_data(self.state)
         return [mat]
+    """
+    Iteration block
+    """
+    def run_game(self, max_iter):
+        previous_state = None
+        i = 0
+        while (self.grid.state != previous_state and i < max_iter):
+            i += 1
+            previous_state = self.grid.state.copy()
+            self.grid.update(N)
+        return self.grid
 
     def render_able(self):
         new_state = []
@@ -46,12 +59,21 @@ chosen_seed = input()
 """
 Run the game
 """
-game = Game(generate_seed(N, chosen_seed))
-"""
-Animation
-"""
-fig, ax = plt.subplots()
-mat = ax.matshow(game.state)
-ani = animation.FuncAnimation(fig, game.update, interval=50,
-                              save_count=50)
-plt.show()
+print('Animation or 1000 iterations? [a/i]')
+show = input()
+if show == 'a':
+    """
+    Animation
+    """
+    game = Game(generate_seed(N, chosen_seed))
+    fig, ax = plt.subplots()
+    mat = ax.matshow(game.state)
+    ani = animation.FuncAnimation(fig, game.update, interval=50,
+                                  save_count=50)
+    plt.show()
+elif show =='i':
+    game = Game(generate_seed(N, chosen_seed))
+    max_iter = 1000
+    print(game.run_game(max_iter))
+else:
+    print('Sorry, invalid entry.')
