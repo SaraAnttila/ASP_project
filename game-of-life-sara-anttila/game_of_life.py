@@ -50,7 +50,7 @@ class Game():
     def __str__(self):
         return str(self.grid)
 
-N=4
+N=32
 max_iter = 1000
 chosen_seed = '4'
 game = Game(generate_seed(N, chosen_seed))
