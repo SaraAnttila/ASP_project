@@ -12,5 +12,4 @@ install:
   - pip install matplotlib
 
 script:
-  - ls /game-of-life-sara-anttila
   - python ./game-of-life-sara-anttila/game_of_life.py
