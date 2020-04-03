@@ -12,4 +12,4 @@ install:
   - pip install numpy
 
 script:
-  - /game-of-life-anttila/game_of_life.py
+  - python ./game-of-life-anttila/game_of_life.py

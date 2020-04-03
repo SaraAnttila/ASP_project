@@ -47,6 +47,13 @@ class Game():
     def __str__(self):
         return str(self.grid)
 
+N=32
+max_iter = 1000
+chosen_seed = '4'
+game = Game(generate_seed(N, chosen_seed))
+max_iter = 1000
+print(game.run_game(max_iter))
+
 # """
 # Decide the size of the grid
 # """
@@ -55,7 +62,7 @@ class Game():
 #
 # print('Enter type of seed. 1 = random seed, 2 = glider seed, 3 = line seed, 4 = cross seed')
 # chosen_seed = input()
-# 
+#
 # """
 # Run the game
 # """
