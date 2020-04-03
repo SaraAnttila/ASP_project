@@ -47,33 +47,33 @@ class Game():
     def __str__(self):
         return str(self.grid)
 
-"""
-Decide the size of the grid
-"""
-print('Enter the size of the square grid')
-N = int(input())
-
-print('Enter type of seed. 1 = random seed, 2 = glider seed, 3 = line seed, 4 = cross seed')
-chosen_seed = input()
-
-"""
-Run the game
-"""
-print('Animation or 1000 iterations? [a/i]')
-show = input()
-if show == 'a':
-    """
-    Animation
-    """
-    game = Game(generate_seed(N, chosen_seed))
-    fig, ax = plt.subplots()
-    mat = ax.matshow(game.state)
-    ani = animation.FuncAnimation(fig, game.update, interval=50,
-                                  save_count=50)
-    plt.show()
-elif show =='i':
-    game = Game(generate_seed(N, chosen_seed))
-    max_iter = 1000
-    print(game.run_game(max_iter))
-else:
-    print('Sorry, invalid entry.')
+# """
+# Decide the size of the grid
+# """
+# print('Enter the size of the square grid')
+# N = int(input())
+#
+# print('Enter type of seed. 1 = random seed, 2 = glider seed, 3 = line seed, 4 = cross seed')
+# chosen_seed = input()
+# 
+# """
+# Run the game
+# """
+# print('Animation or 1000 iterations? [a/i]')
+# show = input()
+# if show == 'a':
+#     """
+#     Animation
+#     """
+#     game = Game(generate_seed(N, chosen_seed))
+#     fig, ax = plt.subplots()
+#     mat = ax.matshow(game.state)
+#     ani = animation.FuncAnimation(fig, game.update, interval=50,
+#                                   save_count=50)
+#     plt.show()
+# elif show =='i':
+#     game = Game(generate_seed(N, chosen_seed))
+#     max_iter = 1000
+#     print(game.run_game(max_iter))
+# else:
+#     print('Sorry, invalid entry.')
