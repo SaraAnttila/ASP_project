@@ -1,9 +1,12 @@
 import numpy as np
 import time
+import sys
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from grid import Grid
 from grid import generate_seed
+
+from cross_result import correct_result
 
 """
 Game runner
@@ -47,13 +50,22 @@ class Game():
     def __str__(self):
         return str(self.grid)
 
-N=32
+N=4
 max_iter = 1000
 chosen_seed = '4'
 game = Game(generate_seed(N, chosen_seed))
-max_iter = 1000
-print(game.run_game(max_iter))
 
+result = game.run_game(max_iter)
+
+valid = True
+for i in range(len(result.state)):
+    if str(result.state[i]) != str(correct_result[i]):
+        valid = False
+
+if not valid:
+    sys.exit("test unseccesful")
+else:
+    print("SUCCESS")
 # """
 # Decide the size of the grid
 # """
