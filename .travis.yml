@@ -2,8 +2,7 @@
 language: python
 
 python:
-  - "2.7"
-  - "3.4"
+  - "3.7.4"
 
 notification:
   email: false
@@ -12,4 +11,5 @@ install:
   - pip install numpy
 
 script:
+  - ls
   - python /game-of-life-anttila/game_of_life.py
