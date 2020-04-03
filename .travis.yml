@@ -11,5 +11,5 @@ install:
   - pip install numpy
 
 script:
-  - ls
-  - python /game-of-life-anttila/game_of_life.py
+  - ls /game-of-life-anttila
+  - python ./game-of-life-anttila/game_of_life.py
