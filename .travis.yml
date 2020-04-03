@@ -9,6 +9,7 @@ notification:
 
 install:
   - pip install numpy
+  - pip install matplotlib
 
 script:
   - ls /game-of-life-sara-anttila
